@@ -1,7 +1,19 @@
+/* GLOBAL RESET + SMOOTHNESS */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #222;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SECTION DIVIDERS (Premium Structure) */
+section {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 /* HEADER */
@@ -13,11 +25,17 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: box-shadow 0.3s;
+}
+
+header:hover {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 .logo {
   font-weight: 600;
   font-size: 20px;
+  letter-spacing: 0.3px;
 }
 
 nav a {
@@ -25,6 +43,12 @@ nav a {
   text-decoration: none;
   color: #333;
   position: relative;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: black;
 }
 
 nav a::after {
@@ -52,30 +76,42 @@ nav a:hover::after {
   justify-content: center;
 }
 
+/* PREMIUM GRADIENT OVERLAY */
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.45)
+  );
 }
 
 .hero-content {
   position: relative;
   color: white;
   text-align: center;
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 50px;
+  font-size: 56px;
   margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  font-size: 18px;
 }
 
 .hero button {
-  padding: 12px 25px;
+  padding: 12px 28px;
   border: none;
   background: white;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .hero button:hover {
@@ -85,67 +121,147 @@ nav a:hover::after {
 
 /* SERVICES */
 .services {
-  padding: 80px 60px;
+  padding: 100px 10%;
   text-align: center;
+  background: white;
+}
+
+.services h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
 }
 
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 35px;
   margin-top: 40px;
 }
 
+/* SERVICE CARD */
 .card {
-  padding: 30px;
+  padding: 32px;
   border: 1px solid #eee;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  background: white;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.12),
+    0 0 0 1px rgba(0,0,0,0.02);
 }
 
 /* WHY US */
 .why-us {
   background: #f9f9f9;
-  padding: 70px;
+  padding: 100px 10%;
   text-align: center;
+}
+
+.why-us h2 {
+  font-size: 34px;
 }
 
 .why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 30px;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.why-grid div {
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.why-grid div:hover {
+  transform: scale(1.05);
 }
 
 /* CTA */
 .cta {
   text-align: center;
-  padding: 80px;
+  padding: 100px 10%;
   background: black;
   color: white;
 }
 
+.cta h2 {
+  font-size: 32px;
+}
+
 .cta button {
-  padding: 12px 25px;
+  padding: 12px 28px;
   border: none;
   cursor: pointer;
+  margin-top: 15px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 100px 10%;
+  text-align: center;
+  background: white;
+}
+
+.contact input,
+.contact textarea {
+  display: block;
+  margin: 12px auto;
+  padding: 12px;
+  width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact button {
+  padding: 12px 28px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* GOOGLE MAP */
+.map-section {
+  padding: 100px 10%;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.map-section h2 {
+  margin-bottom: 25px;
+  font-size: 34px;
+}
+
+.map-section iframe {
+  border-radius: 12px;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   background: #111;
   color: white;
+  font-size: 14px;
 }
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
 
   header {
     flex-direction: column;
     align-items: center;
+    padding: 15px;
   }
 
   nav {
@@ -156,6 +272,18 @@ footer {
     font-size: 30px;
   }
 
+  .hero p {
+    font-size: 16px;
+  }
+
+  .services,
+  .why-us,
+  .contact,
+  .map-section,
+  .cta {
+    padding: 60px 20px;
+  }
+
   .service-grid {
     grid-template-columns: 1fr;
   }
@@ -164,22 +292,4 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
-  .cta {
-    padding: 40px;
-  }
-}
-/* GOOGLE MAP */
-.map-section {
-  padding: 60px;
-  text-align: center;
-  background: #f9f9f9;
-}
-
-.map-section h2 {
-  margin-bottom: 20px;
-}
-
-.map-section iframe {
-  border-radius: 10px;
-  max-width: 1000px;
 }
