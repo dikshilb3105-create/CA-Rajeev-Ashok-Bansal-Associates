@@ -119,6 +119,33 @@ nav a:hover::after {
   color: white;
 }
 
+/* ABOUT SECTION */
+
+.about {
+  padding: 80px 10%;
+  background: white;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-text {
+  text-align: left;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.about h2 {
+  margin-bottom: 30px;
+}
+
+.about h3 {
+  margin-top: 25px;
+}
+
 /* SERVICES */
 .services {
   padding: 100px 10%;
