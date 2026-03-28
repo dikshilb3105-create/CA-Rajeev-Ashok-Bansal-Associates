@@ -491,30 +491,22 @@ section {
     margin-top: 30px;
 }
 
-.founder-photo {
-    width: 200px;
-    height: 200px;
+.founder-photo:hover {
+    transform: scale(0.9);
+}
+
+.founder-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.founder-img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #8b0000;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    transition: 0.3s;
-}
-
-.founder-photo:hover {
-    transform: scale(1.05);
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   /* centers image horizontally */
-    justify-content: center;
-    text-align: center;    /* centers text */
-}
-
-.profile img {
-    border-radius: 50%;
+    border: 5px solid #8B0000; /* optional ring */
 }
 
 </style>
