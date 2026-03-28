@@ -223,4 +223,287 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   font-weight: 600;
-  t
+  transition: 0.3s;
+}
+
+.why-grid div:hover {
+  transform: translateY(-5px);
+}
+
+/* CONTACT */
+
+.contact form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.contact button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  padding: 14px 16px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+header {
+  padding: 12px 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+}
+
+section {
+  padding: 70px 20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Rajeev Ashok Bansal Associates<br>
+<span class="sub-logo">Chartered Accountants</span>
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div data-aos="fade-up">
+
+<h1>
+Rajeev Ashok Bansal Associates
+</h1>
+
+<p>
+Chartered Accountants | Precision. Trust. Growth.
+</p>
+
+<p>
+Your Financial Partner
+</p>
+
+<button onclick="location.href='#contact'">
+Get Consultation
+</button>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>
+About Our Firm
+</h2>
+
+<p style="max-width:800px;margin:auto;text-align:center;">
+Rajeev Ashok Bansal Associates is a professional Chartered Accountancy firm with over 20+ years of experience in audit, taxation, compliance, and advisory services. We deliver reliable, ethical, and timely financial solutions to businesses and individuals.
+</p>
+
+</section>
+
+<section id="services" class="services">
+
+<h2>
+Our Services
+</h2>
+
+<div class="service-grid" id="service-grid"></div>
+
+</section>
+
+<section class="why-us">
+
+<h2>
+Why Choose Us
+</h2>
+
+<div class="why-grid">
+
+<div>20+ Years Experience</div>
+<div>500+ Clients</div>
+<div>Expert Team</div>
+<div>Fast Service</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>
+Contact Us
+</h2>
+
+<form action="https://formspree.io/f/yourID" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" placeholder="Your Message" rows="4"></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</section>
+
+<footer>
+© 2026 Rajeev Ashok Bansal Associates | Chartered Accountants
+</footer>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+WhatsApp
+</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
+window.addEventListener("scroll", function () {
+  document.querySelector("header")
+  .classList.toggle("sticky", window.scrollY > 50);
+});
+
+const services = [
+{
+id: "audit",
+name: "Financial Statements Audit",
+img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600",
+desc: "Comprehensive audit of financial statements ensuring regulatory compliance, accuracy, and transparency."
+},
+{
+id: "tax",
+name: "Direct Taxation",
+img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600",
+desc: "Expert income tax planning, filing, and compliance services for individuals and businesses."
+}
+];
+
+const grid = document.getElementById("service-grid");
+
+services.forEach(svc => {
+
+const card = document.createElement("div");
+
+card.className = "card";
+
+card.style.backgroundImage =
+`url('${svc.img}')`;
+
+card.innerHTML = `
+
+<div class="card-inner">
+
+<h3>${svc.name}</h3>
+
+<button onclick="togglePopup(event, '${svc.id}')">
+Read More
+</button>
+
+<div class="card-popup" id="popup-${svc.id}">
+
+<span class="close-popup"
+onclick="closePopup(event, '${svc.id}')">
+×
+</span>
+
+${svc.desc}
+
+</div>
+
+</div>
+
+`;
+
+grid.appendChild(card);
+
+});
+
+function togglePopup(e, id) {
+
+ e.stopPropagation();
+
+ const popup = document
+ .getElementById("popup-" + id);
+
+ document
+ .querySelectorAll(".card-popup.open")
+ .forEach(p => p.classList.remove("open"));
+
+ popup.classList.toggle("open");
+
+}
+
+function closePopup(e, id) {
+
+ e.stopPropagation();
+
+ document
+ .getElementById("popup-" + id)
+ .classList.remove("open");
+
+}
+
+</script>
+
+</body>
+</html>
