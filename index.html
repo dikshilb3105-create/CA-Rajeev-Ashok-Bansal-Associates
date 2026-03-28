@@ -25,7 +25,11 @@
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  background: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* HEADER */
@@ -40,7 +44,7 @@ header {
   align-items: center;
   padding: 15px 50px;
   backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   transition: 0.3s;
 }
 
@@ -86,7 +90,7 @@ nav a:hover::after {
 
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(10,37,64,0.7), rgba(10,37,64,0.7)),
+  background: linear-gradient(rgba(10,37,64,0.75), rgba(10,37,64,0.75)),
   url("https://images.unsplash.com/photo-1554224154-26032ffc0d07") center/cover;
   display: flex;
   align-items: center;
@@ -98,29 +102,16 @@ nav a:hover::after {
 .hero h1 {
   font-size: 48px;
   font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 10px;
 }
 
 .hero button {
   margin-top: 20px;
   padding: 14px 28px;
-  font-size: 16px;
   border-radius: 8px;
   border: none;
   background: var(--primary);
   color: white;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.hero button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 section {
@@ -129,9 +120,15 @@ section {
 
 h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 32px;
+  margin-bottom: 10px;
+  font-size: 34px;
   color: var(--dark);
+}
+
+.subtitle {
+  text-align: center;
+  color: gray;
+  margin-bottom: 40px;
 }
 
 /* SERVICES */
@@ -142,7 +139,7 @@ h2 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
 
@@ -258,10 +255,8 @@ footer {
   background: var(--dark);
   color: white;
   text-align: center;
-  padding: 25px;
+  padding: 30px;
 }
-
-/* WHATSAPP BUTTON */
 
 .whatsapp {
   position: fixed;
@@ -325,15 +320,11 @@ Rajeev Ashok Bansal Associates
 </h1>
 
 <p>
-Chartered Accountants | Precision. Trust. Growth.
-</p>
-
-<p>
-Your Financial Partner
+Trusted Chartered Accountants & Business Advisors
 </p>
 
 <button onclick="location.href='#contact'">
-Get Consultation
+Book Consultation
 </button>
 
 </div>
@@ -346,8 +337,12 @@ Get Consultation
 About Our Firm
 </h2>
 
+<p class="subtitle">
+Delivering reliable, ethical, and timely financial solutions for over 20 years.
+</p>
+
 <p style="max-width:800px;margin:auto;text-align:center;">
-Rajeev Ashok Bansal Associates is a professional Chartered Accountancy firm with over 20+ years of experience in audit, taxation, compliance, and advisory services. We deliver reliable, ethical, and timely financial solutions to businesses and individuals.
+Rajeev Ashok Bansal Associates is a professional Chartered Accountancy firm specializing in audit, taxation, compliance, and advisory services for businesses, startups, and individuals.
 </p>
 
 </section>
@@ -357,6 +352,10 @@ Rajeev Ashok Bansal Associates is a professional Chartered Accountancy firm with
 <h2>
 Our Services
 </h2>
+
+<p class="subtitle">
+Comprehensive financial, compliance, and advisory solutions similar to leading consulting firms.
+</p>
 
 <div class="service-grid" id="service-grid"></div>
 
@@ -373,7 +372,7 @@ Why Choose Us
 <div>20+ Years Experience</div>
 <div>500+ Clients</div>
 <div>Expert Team</div>
-<div>Fast Service</div>
+<div>Fast Turnaround</div>
 
 </div>
 
@@ -402,7 +401,9 @@ Send Message
 </section>
 
 <footer>
+
 © 2026 Rajeev Ashok Bansal Associates | Chartered Accountants
+
 </footer>
 
 <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
@@ -424,18 +425,84 @@ window.addEventListener("scroll", function () {
 });
 
 const services = [
+
 {
 id: "audit",
-name: "Financial Statements Audit",
+name: "Audit & Assurance",
 img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600",
-desc: "Comprehensive audit of financial statements ensuring regulatory compliance, accuracy, and transparency."
+desc: "Statutory audit, internal audit, tax audit, and compliance reviews for businesses."
 },
+
 {
 id: "tax",
-name: "Direct Taxation",
+name: "Income Tax Services",
 img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600",
-desc: "Expert income tax planning, filing, and compliance services for individuals and businesses."
+desc: "Income tax return filing, planning, and advisory for individuals and companies."
+},
+
+{
+id: "gst",
+name: "GST Compliance",
+img: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600",
+desc: "GST registration, return filing, reconciliation, and litigation support."
+},
+
+{
+id: "company",
+name: "Company Incorporation",
+img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600",
+desc: "Private limited company, LLP, and startup registration services."
+},
+
+{
+id: "roc",
+name: "ROC Compliance",
+img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600",
+desc: "Annual filings, director compliance, and corporate governance support."
+},
+
+{
+id: "payroll",
+name: "Payroll Management",
+img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600",
+desc: "Salary processing, PF, ESI compliance, and payroll outsourcing."
+},
+
+{
+id: "accounting",
+name: "Accounting & Bookkeeping",
+img: "https://images.unsplash.com/photo-1554224155-1696413565d3?w=600",
+desc: "Complete accounting and bookkeeping services for SMEs and startups."
+},
+
+{
+id: "vcfo",
+name: "Virtual CFO Services",
+img: "https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?w=600",
+desc: "Financial planning, MIS reporting, budgeting, and strategic advisory."
+},
+
+{
+id: "startup",
+name: "Startup Advisory",
+img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600",
+desc: "Business structuring, funding support, and compliance setup."
+},
+
+{
+id: "fema",
+name: "FEMA & NRI Services",
+img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600",
+desc: "FEMA compliance, NRI taxation, and foreign investment advisory."
+},
+
+{
+id: "consulting",
+name: "Business Consultancy",
+img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600",
+desc: "Strategic planning, risk management, and business growth advisory."
 }
+
 ];
 
 const grid = document.getElementById("service-grid");
