@@ -448,6 +448,44 @@ section {
   background: #f7f9fc;
 }
   
+/* STATS SECTION */
+
+.stats {
+  background: #ffffff;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.stats-grid div {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.stats-grid div:hover {
+  transform: translateY(-6px);
+}
+
+.counter {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stats-grid p {
+  margin-top: 8px;
+  font-weight: 500;
+}
+  
 </style>
 
 
@@ -545,6 +583,42 @@ Comprehensive financial, compliance, and advisory solutions similar to leading c
 
 </section>
 
+<section class="stats">
+
+<h2>
+Our Achievements
+</h2>
+
+<p class="subtitle">
+Delivering trusted professional services with proven results.
+</p>
+
+<div class="stats-grid">
+
+<div>
+<h3 class="counter" data-target="20">0</h3>
+<p>Years of Experience</p>
+</div>
+
+<div>
+<h3 class="counter" data-target="500">0</h3>
+<p>Clients Served</p>
+</div>
+
+<div>
+<h3 class="counter" data-target="1000">0</h3>
+<p>Returns Filed</p>
+</div>
+
+<div>
+<h3 class="counter" data-target="2003">0</h3>
+<p>Serving Since</p>
+</div>
+
+</div>
+
+</section>
+  
 <section class="why-us">
 
 <h2>
@@ -827,5 +901,42 @@ window.addEventListener("load", function () {
 
 </script>
 
+<script>
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+  counter.innerText = '0';
+
+  const updateCounter = () => {
+
+    const target = +counter.getAttribute('data-target');
+
+    const current = +counter.innerText;
+
+    const increment = target / 100;
+
+    if (current < target) {
+
+      counter.innerText =
+      Math.ceil(current + increment);
+
+      setTimeout(updateCounter, 20);
+
+    } else {
+
+      counter.innerText = target;
+
+    }
+
+  };
+
+  updateCounter();
+
+});
+
+</script>
+  
 </body>
 </html>
