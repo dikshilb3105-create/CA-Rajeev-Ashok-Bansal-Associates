@@ -1,135 +1,226 @@
 <!DOCTYPE html>
-<body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajeev Ashok Bansal Associates | Chartered Accountants</title>
 
-<header>
-  <div class="logo">
-    Rajeev Ashok Bansal Associates<br>
-    <span class="sub-logo">Chartered Accountants</span>
-  </div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-<section class="hero">
-  <div class="overlay"></div>
-  <div class="hero-content" data-aos="fade-up">
-    <h1>Rajeev Ashok Bansal Associates</h1>
-    <p>Chartered Accountants | Precision. Trust. Growth.</p>
-    <p>Your Financial Partner</p>
-    <button onclick="location.href='#contact'">Get Consultation</button>
-  </div>
-</section>
+<style>
 
-<!-- NEW ABOUT SECTION (THIS FIXES YOUR ISSUE) -->
-
-<section id="about">
-  <h2>About Our Firm</h2>
-  <p class="about-text">
-  Rajeev Ashok Bansal Associates is a professional Chartered Accountancy firm with over 20+ years of experience in audit, taxation, compliance, and advisory services. We focus on delivering reliable, ethical, and timely financial solutions while building long-term relationships with our clients.
-  </p>
-</section>
-
-<!-- KEEPING YOUR EXISTING SECTIONS UNCHANGED BELOW -->
-
-<section id="services" class="services">
-  <h2>Our Services</h2>
-  <div class="service-grid" id="service-grid"></div>
-</section>
-
-<section class="why-us">
-  <h2>Why Choose Us</h2>
-  <div class="why-grid">
-    <div>20+ Years Experience</div>
-    <div>500+ Clients</div>
-    <div>Expert Team</div>
-    <div>Fast Service</div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>Let's Simplify Your Finances</h2>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/yourID" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="4"></textarea>
-    <button type="submit">Send</button>
-  </form>
-</section>
-
-<footer>
-  <p>© 2026 Rajeev Ashok Bansal Associates, Chartered Accountants</p>
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init();
-window.addEventListener("scroll", function () {
-  document.querySelector("header").classList.toggle("sticky", window.scrollY > 50);
-});
-
-const services = [
-  { id: "audit",      name: "Financial Statements Audit",  img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&fit=crop", desc: "Comprehensive audit of financial statements ensuring regulatory compliance, accuracy, and transparency for stakeholders and regulatory bodies." },
-  { id: "tax",        name: "Direct Taxation",             img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&fit=crop", desc: "Expert income tax planning, filing, and compliance services for individuals, corporates, and trusts to optimise tax liability legally." },
-  { id: "ngo",        name: "NGO Advisory",                img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&fit=crop", desc: "End-to-end advisory for NGOs, charitable trusts, and Section 8 companies including registration, compliance, and FCRA matters." },
-  { id: "bank",       name: "Bank Audit",                  img: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=600&fit=crop", desc: "Concurrent, statutory, and stock audits for banks and financial institutions in accordance with RBI guidelines." },
-  { id: "corporate",  name: "Corporate Advisory",          img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&fit=crop", desc: "Strategic advisory on corporate restructuring, mergers & acquisitions, joint ventures, and business transformations." },
-  { id: "kpo",        name: "KPO Services",                img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&fit=crop", desc: "Knowledge process outsourcing for finance and accounting functions including bookkeeping, MIS, payroll, and reporting." },
-  { id: "legal",      name: "Agreements & Deeds",          img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&fit=crop", desc: "Drafting and vetting of commercial agreements, partnership deeds, shareholder agreements, and other legal documents." },
-  { id: "consulting", name: "Management Consultancy",      img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&fit=crop", desc: "Business process improvement, financial analysis, budgeting, forecasting, and strategic management consulting." },
-  { id: "risk",       name: "Risk & Internal Audit",       img: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&fit=crop", desc: "Designing and executing internal audit frameworks, risk assessments, and internal control evaluations for organisations." },
-  { id: "due",        name: "Due Diligence",               img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&fit=crop", desc: "Financial, legal, and operational due diligence for investments, acquisitions, and business partnerships." },
-  { id: "startup",    name: "Start-up Services",           img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&fit=crop", desc: "Incorporation, funding structuring, compliance setup, and strategic advisory tailored for early-stage and growth-stage start-ups." },
-  { id: "esg",        name: "ESG Services",                img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&fit=crop", desc: "Environmental, Social, and Governance (ESG) strategy, reporting frameworks, and sustainability consulting." },
-  { id: "succession", name: "Succession Planning",         img: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&fit=crop", desc: "Structured planning for business succession, family wealth transfer, and continuity strategies for promoters and business families." },
-  { id: "valuation",  name: "Valuation",                   img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&fit=crop", desc: "Business and asset valuation for M&A, regulatory purposes, ESOPs, dispute resolution, and fundraising." },
-  { id: "fema",       name: "FEMA Consulting",             img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&fit=crop", desc: "Advisory on Foreign Exchange Management Act (FEMA) compliance, FDI, ODI, and cross-border transaction structuring." },
-  { id: "vcfo",       name: "Virtual CFO",                 img: "https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?w=600&fit=crop", desc: "On-demand CFO services including financial planning, investor relations, board reporting, and strategic finance support." },
-  { id: "ifrs",       name: "Ind-AS / IFRS / US GAAP",    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&fit=crop", desc: "Accounting standards implementation and advisory for Ind-AS, IFRS, and US GAAP transition, convergence, and ongoing compliance." },
-  { id: "gst",        name: "Indirect Taxation",           img: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600&fit=crop", desc: "GST registration, return filing, audit, advisory, and litigation support for businesses across industries." }
-];
-
-const grid = document.getElementById("service-grid");
-
-services.forEach(svc => {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.setAttribute("data-aos", "fade-up");
-  card.style.backgroundImage = `url('${svc.img}')`;
-  card.innerHTML = `
-    <div class="card-inner">
-      <h3>${svc.name}</h3>
-      <button class="read-more-btn" onclick="togglePopup(event, '${svc.id}')">Read More</button>
-      <div class="card-popup" id="popup-${svc.id}">
-        <span class="close-popup" onclick="closePopup(event, '${svc.id}')">&times;</span>
-        ${svc.desc}
-      </div>
-    </div>
-  `;
-  grid.appendChild(card);
-});
-
-function togglePopup(e, id) {
-  e.stopPropagation();
-  const popup = document.getElementById("popup-" + id);
-  const isOpen = popup.classList.contains("open");
-  // Close all popups first
-  document.querySelectorAll(".card-popup.open").forEach(p => p.classList.remove("open"));
-  if (!isOpen) popup.classList.add("open");
+:root {
+  --primary: #0b5ed7;
+  --dark: #0a2540;
+  --light: #f4f7fb;
 }
 
-function closePopup(e, id) {
-  e.stopPropagation();
-  document.getElementById("popup-" + id).classList.remove("open");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-</script>
-</body>
-</html>
-index.html
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: white;
+}
+
+/* HEADER */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.85);
+  transition: 0.3s;
+}
+
+header.sticky {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.sub-logo {
+  font-size: 12px;
+  color: gray;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(10,37,64,0.7), rgba(10,37,64,0.7)),
+  url("https://images.unsplash.com/photo-1554224154-26032ffc0d07") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+section {
+  padding: 90px 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: var(--dark);
+}
+
+/* SERVICES */
+
+.services {
+  background: var(--light);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card-inner {
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  font-size: 20px;
+}
+
+.card button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: white;
+  color: var(--dark);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.card-popup {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  right: 8%;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card-popup.open {
+  display: block;
+}
+
+.close-popup {
+  float: right;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* WHY US */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.why-grid div {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  font-weight: 600;
+  t
