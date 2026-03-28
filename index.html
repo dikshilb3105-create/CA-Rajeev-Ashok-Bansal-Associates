@@ -447,7 +447,11 @@ section {
 #about {
   background: #f7f9fc;
 }
-  
+
+ .about-container {
+    overflow: hidden;   /* stops image spilling out */
+    text-align: center;
+} 
 /* STATS SECTION */
 
 .stats {
@@ -502,13 +506,13 @@ section {
 }
 
 .founder-img {
-    width: 180px;
-    height: 180px;
+    width: 160px;          /* reduce size */
+    height: 160px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #8B0000; /* optional ring */
+    object-fit: cover;     /* crops image properly */
+    object-position: 50% 35%; /* adjust face position */
+    display: block;
 }
-
 </style>
 
 
