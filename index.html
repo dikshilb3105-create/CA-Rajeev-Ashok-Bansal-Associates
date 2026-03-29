@@ -505,14 +505,22 @@ section {
     align-items: center;
 }
 
-.profile-img {
-    width: 160px;          /* reduce size */
-    height: 160px;
+.founder-wrapper {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
     border-radius: 50%;
-    object-fit: cover;     /* crops image properly */
-    object-position: 50% 35%; /* adjust face position */
-    display: block;
+    overflow: hidden;
+    border: 4px solid #8B0000;
 }
+
+.founder-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+  
 </style>
 
 
