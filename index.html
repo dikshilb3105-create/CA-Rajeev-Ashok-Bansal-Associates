@@ -676,7 +676,7 @@ Delivering trusted professional services with proven results.
 </div>
 
 <div>
-<h3 class="counter" data-target="500+">0</h3>
+<h3 class="counter" data-target="500">0</h3>
 <p>Clients Served</p>
 </div>
 
@@ -980,36 +980,44 @@ window.addEventListener("load", function () {
 
 const counters = document.querySelectorAll('.counter');
 
-counters.forEach(counter => {
+let started = false;
 
-  counter.innerText = '0';
+const startCounting = () => {
+  if (started) return; // prevent repeat
+  started = true;
 
-  const updateCounter = () => {
+  counters.forEach(counter => {
+    counter.innerText = '0';
 
-    const target = +counter.getAttribute('data-target');
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = target / 100;
 
-    const current = +counter.innerText;
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
 
-    const increment = target / 100;
+    updateCounter();
+  });
+};
 
-    if (current < target) {
-
-      counter.innerText =
-      Math.ceil(current + increment);
-
-      setTimeout(updateCounter, 20);
-
-    } else {
-
-      counter.innerText = target;
-
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startCounting();
     }
-
-  };
-
-  updateCounter();
-
+  });
+}, {
+  threshold: 0.5
 });
+
+observer.observe(document.querySelector('.stats'));
+</script>
 
 </script>
   
