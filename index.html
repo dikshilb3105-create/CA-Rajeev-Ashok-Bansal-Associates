@@ -502,20 +502,27 @@ section {
     align-items: center;
 }
 
-.founder-wrapper {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto;
+/* Bigger and properly scaled circle */
+.profile-wrapper {
+    width: 220px;              /* increase size */
+    height: 220px;
+    margin: 20px auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #8B0000;
+    border: 6px solid #1f2f46; /* cleaner dark blue ring */
 }
 
-.founder-wrapper img {
+/* Image adjustment */
+.profile-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 30%;
+    object-position: center;   /* prevent face cut */
+}
+
+/* REMOVE this (causes shrink on hover) */
+.profile-photo:hover {
+    transform: none;
 }
   
 </style>
