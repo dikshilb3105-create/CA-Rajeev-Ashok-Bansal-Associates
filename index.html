@@ -495,34 +495,22 @@ section {
     margin-top: 30px;
 }
 
-
-.profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Bigger and properly scaled circle */
+/* Circle container */
 .profile-wrapper {
-    width: 220px;              /* increase size */
+    width: 220px;
     height: 220px;
     margin: 20px auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 6px solid #1f2f46; /* cleaner dark blue ring */
+    border: 5px solid #1f2f46;
 }
 
-/* Image adjustment */
+/* Image inside */
 .profile-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 40%;   /* prevent face cut */
-}
-
-/* REMOVE this (causes shrink on hover) */
-.profile-photo:hover {
-    transform: none;
+    object-position: 55% center; /* 🔥 shifts image LEFT → fixes right cut */
 }
   
 </style>
@@ -604,10 +592,15 @@ He is a graduate of Shri Guru Teg Bahadur Khalsa College, Delhi University, one 
 In addition to his professional practice, he actively contributes to the professional community as an Executive Member of Team ITCA Ludhiana, demonstrating his commitment to continuous learning, professional collaboration, and the advancement of the Chartered Accountancy profession.
 </p>
 
-<div class="profile">
-    <img src="rajeev bansal.png" alt="CA Rajeev Bansal">
+<div class="profile-section">
+
+    <div class="profile-wrapper">
+        <img src="rajeev bansal.png" alt="CA Rajeev Bansal">
+    </div>
+
     <h2>CA. Rajeev Bansal</h2>
     <p>Founder & Proprietor</p>
+
 </div>
   
 </section> 
