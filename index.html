@@ -988,8 +988,8 @@ const startCounting = () => {
         counter.innerText = Math.ceil(current + increment);
         setTimeout(updateCounter, 20);
       } else {
-        counter.innerText = target;
-      }
+        counter.innerText = target + "+";
+}
     };
 
     updateCounter();
