@@ -588,15 +588,35 @@ body {
   overflow-x: hidden;
 }
 
+/* FOOTER CA LOGO */
+
 .footer-ca-logo {
-  width: 40px;
-  opacity: 0.9;
+  width: 80px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  opacity: 1;
+}
+
+  @media (max-width: 768px) {
+
+  .footer-ca-logo {
+    width: 65px;
+  }
+
 }
   
 .header-ca-logo {
   width: 32px;
   margin-right: 8px;
   vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+
+  .header-ca-logo {
+    height: 26px;
+  }
+
 }
   
 </style>
@@ -614,9 +634,7 @@ body {
 
 <div class="logo">
 
-<img src="ca-logo.jpg"
-alt="CA"
-class="header-ca-logo">
+<img src="ca-logo.jpg" class="header-ca-logo" alt="Chartered Accountant">
 
 Rajeev Ashok Bansal & Associates
 <br>
